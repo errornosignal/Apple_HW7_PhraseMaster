@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		317923921FDB16C5000013CA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317923911FDB16C5000013CA /* main.swift */; };
+		3179239D1FDB3E29000013CA /* Phrase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3179239C1FDB3E29000013CA /* Phrase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		3179238E1FDB16C5000013CA /* Apple_HW7_PhraseMaster */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Apple_HW7_PhraseMaster; sourceTree = BUILT_PRODUCTS_DIR; };
 		317923911FDB16C5000013CA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		3179239C1FDB3E29000013CA /* Phrase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phrase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				317923911FDB16C5000013CA /* main.swift */,
+				3179239C1FDB3E29000013CA /* Phrase.swift */,
 			);
 			path = Apple_HW7_PhraseMaster;
 			sourceTree = "<group>";
@@ -120,6 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3179239D1FDB3E29000013CA /* Phrase.swift in Sources */,
 				317923921FDB16C5000013CA /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
