@@ -8,7 +8,7 @@
 
 import Foundation
 
-//get user string input
+//validateStringInput
 func validateStringInput(prompt: String) -> String {
     while (true) {
         print(prompt)
@@ -21,17 +21,15 @@ func validateStringInput(prompt: String) -> String {
     }
 }
 
-//get user int input
+//validateIntInput
 func validateIntInput(prompt: String) -> Int {
     while (true) {
-        print(prompt);
+        print(prompt)
         let inputInt = Int(readLine()!)
-        
         if (inputInt != nil ) {
-            return inputInt!;
-        }
-        else {
-            print("Error! Invalid input. Value must be an integer.");
+            return inputInt!
+        } else {
+            print("Error! Invalid input. Value must be an integer.")
         }
     }
 }
@@ -46,9 +44,9 @@ var phrase = Phrase(contents: " ")
 
 //loop for menu selections
 while(true) {
-    
-    //get user selection
     var menuSelection: Int = 0
+    
+    //if first iteration (i.e. runcount == 0) then prompt for phrase input, else promt to make menu selection
     if (progRunCount == 0) {
         menuSelection = 1
     } else {
@@ -57,24 +55,34 @@ while(true) {
     switch(menuSelection) {
         case 1:
             phrase = Phrase(contents: validateStringInput(prompt: "Enter a phrase:"))
+            //repeat input back to user
             processedPhrase = getPhraseContents(phrase: phrase)
-            print("You entered: \(processedPhrase)")
+            print("You entered: \n \(processedPhrase)")
+            //give user stats for phrase
+            processedPhrase = getPhraseStats(phrase: phrase)
+            print("phraseStats: \n \(processedPhrase)")
+            print()
         case 2:
             processedPhrase = convertToLower(phrase: phrase)
-            print("convertToLower: \(processedPhrase)")
+            print("convertToLower: \n \(processedPhrase)")
         case 3:
             processedPhrase = convertToUpper(phrase: phrase)
-            print("convertToUpper: \(processedPhrase)")
+            print("convertToUpper: \n \(processedPhrase)")
         case 4:
             processedPhrase = reverseWords(phrase: phrase)
-            print("reverseWords: \(processedPhrase)")
+            print("reverseWords: \n \(processedPhrase)")
         case 5:
             processedPhrase = sortAlphabetically(phrase: phrase)
-            print("sortAlphabeticaly: \(processedPhrase)")
+            print("sortAlphabeticaly: \n \(processedPhrase)")
         case 6:
+            //case for rotN shift
             let n: Int = validateIntInput(prompt:"Enter amount of shift: ")
             processedPhrase = applyRotN(phrase: phrase, n: n)
-            print("applyRot13: \(processedPhrase)")
+            print("applyRot13: \n \(processedPhrase)")
+        case 7:
+            //case for pigLatin
+            processedPhrase = applyPigLatin(phrase: phrase)
+            print("applyPigLatin: \n \(processedPhrase)")
         case 0:
             exit(1)
         default:
@@ -91,8 +99,10 @@ while(true) {
     print("4. reverseWords")
     print("5. sortAlphabetically")
     print("6. applyRotN")
+    print("7. applyPigLatin")
     print("0. quit")
     } else { /*doNothing*/ }
     
+    //increment program iteration counter
     progRunCount += 1
 }
